@@ -1,0 +1,34 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background: url('bg1.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+nav{
+    height: 100px;
+}
+.blurred-container {
+    background: rgba(255, 255, 255, 0); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px); /* Applies the blur effect to the background */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(48, 48, 48);
+    font-size: 20px;
+    }
+
+
+.card{
+    background-color: rgb(237, 255, 255);
+    margin-bottom: 20px;
+}
+    
+span{
+    text-shadow: 
+    1px -1px 1px rgba(135, 135, 135, 0.7),  
+    1px -1px 1px rgba(135, 135, 135, 0.7),   
+    -1px 1px 1px rgba(135, 135, 135, 0.7);
+}
