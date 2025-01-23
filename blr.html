@@ -19,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><b>MainIntroduction</b></a>
+                        <a class="nav-link" href="#"><b>Main Introduction</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Sub 1</a>
@@ -249,10 +249,11 @@
                             <li><p>Aiku ( <span style= "color:rgb(254, 0, 0);">Mythical</span> )</p>
                                 <li><p>Rin ( <span style= "color:rgb(254, 0, 0);">Mythical</span> )</p></li>  
                                 <li><p></p>King ( <span style= "color:rgb(254, 224, 0);">Legendary</span> )</p></li>  
-                                <li><p>Reo ( <span style= "color:rgb(254, 224, 0);">Legendary</span> )</p></li>   
+                                <li><p>Reo ( <span style= "color:rgb(254, 224, 0);">Legendary</span> )</p></li> 
+                                <li><p>Bachira ( <span style= "color:rgb(157, 0, 254);">Epic</span> )</p></li>    
                             <li><p>Chigiri ( <span style= "color:rgb(0, 72, 254);">Rare</span> )</p></li>                         
                             <li><p>Hiori ( <span style= "color:rgb(157, 0, 254);">Epic</span> )</p></li>  
-                            <li><p>Bachira ( <span style= "color:rgb(157, 0, 254);">Epic</span> )</p></li>  
+                            
                             
                             
                                                                                 
@@ -280,7 +281,7 @@
                         <li><p>Dribbler ( <span style= "color:rgb(254, 0, 0);">Mythical</span> )</p></li>    
                         <li><p>Awakened Genius 3-5 players ( <span style= "color:rgb(254, 0, 0);">Mythical</span> )</p></li>
                         <li><p>Snake ( <span style= "color:rgb(254, 0, 0);">Mythical</span> )</p></li>                   
-                        <li><p>Genius 4-5 players ( <span style= "color:rgb(157, 0, 254);">Epic</span> )</p></li>             
+                        <li><p>Genius 3-5 players ( <span style= "color:rgb(157, 0, 254);">Epic</span> )</p></li>             
                                                                                                                                                                          
                         <li><p>Demon Wings ( <span style= "color:rgb(254, 224, 0);">Legendary</span> )</p></li> 
                         <li><p>Puzzle ( <span style= "color:rgb(0, 72, 254);">Rare</span> )</p></li> 
@@ -315,53 +316,61 @@
                   <div class="card-body">
                     <h3 class="card-title">Stats rating based on career</h3>
                     <form id="gradingForm">
-                        <div class="mb-3">
-                            <label for="role" class="form-label">Select Player Role</label>
-                            <select class="form-select" id="role" required>
-                                <option value="">Choose...</option>
-                                <option value="striker">Striker</option>
-                                <option value="defender">Defender</option>
-                                <option value="goalkeeper">Goalkeeper</option>
-                            </select>
-                        </div>
-            
-                        <!-- Input Fields for Stats -->
-                        <div class="mb-3">
-                            <label for="gamesPlayed" class="form-label">Games Played (Number of games played at a separate role only, eg,. striker, goal keeper. We do not count total game played, please select below 500)</label>
-                            <input type="number" class="form-control" id="gamesPlayed" placeholder="Total games played" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="goals" class="form-label">Goals</label>
-                            <input type="number" class="form-control" id="goals" placeholder="Total goals scored" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="assists" class="form-label">Assists</label>
-                            <input type="number" class="form-control" id="assists" placeholder="Total assists" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="steals" class="form-label">Steals</label>
-                            <input type="number" class="form-control" id="steals" placeholder="Total steals" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="dribbles" class="form-label">Successful Dribbles</label>
-                            <input type="number" class="form-control" id="dribbles" placeholder="Total successful dribbles" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="saves" class="form-label">Saves (Goalkeeper Only)</label>
-                            <input type="number" class="form-control" id="saves" placeholder="Total saves">
-                        </div>
-                        <div class="mb-3">
-                            <label for="offense" class="form-label">Offense Contribution(Key passes + Dribbles + Chance created)</label>
-                            <input type="number" class="form-control" id="offense" placeholder="Overall offensive contribution" required>
-                        </div>
-            
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-            
-                    <!-- Result Section -->
-                    <div class="mt-4" id="result"></div>
-                </div>
+                      <div class="mb-3">
+                          <label for="role" class="form-label">Select Player Role</label>
+                          <select class="form-select" id="role" required>
+                              <option value="">Choose...</option>
+                              <option value="striker">Striker</option>
+                              <option value="defender">Defender</option>
+                              <option value="goalkeeper">Goalkeeper</option>
+                              <option value="all">All Role (Total Career)</option>
+                          </select>
+                      </div>
+              
+                      <!-- Input Fields for Stats -->
+                      <div class="mb-3">
+                          <label for="gamesPlayed" class="form-label">Games Played (Number of games played at a separate role only. Type all your match played if All Role)</label>
+                          <input type="number" min="0" step="1" class="form-control" id="gamesPlayed" placeholder="Total games played" required>
+                      </div>
+              
+                      <div class="mb-3">
+                          <label for="goals" class="form-label">Goals</label>
+                          <input type="number" min="0" step="1" class="form-control" id="goals" placeholder="Total goals scored" required>
+                      </div>
+              
+                      <div class="mb-3">
+                          <label for="assists" class="form-label">Assists</label>
+                          <input type="number" min="0" step="1" class="form-control" id="assists" placeholder="Total assists" required>
+                      </div>
+              
+                      <div class="mb-3">
+                          <label for="steals" class="form-label">Steals</label>
+                          <input type="number" min="0" step="1" class="form-control" id="steals" placeholder="Total steals" required>
+                      </div>
+              
+                      <div class="mb-3">
+                          <label for="dribbles" class="form-label">Successful Dribbles</label>
+                          <input type="number" min="0" step="1" class="form-control" id="dribbles" placeholder="Total successful dribbles" required>
+                      </div>
+              
+                      <!-- Saves input is shown only when Goalkeeper role is selected -->
+                      <div class="mb-3" id="savesField">
+                          <label for="saves" class="form-label">Saves (Goalkeeper & All Roles Only)</label>
+                          <input type="number" min="0" step="1" class="form-control" id="saves" placeholder="Total saves">
+                      </div>
+              
+                      <div class="mb-3">
+                          <label for="passes" class="form-label">Passes</label>
+                          <input type="number" min="0" step="1" class="form-control" id="passes" placeholder="Total passes" required>
+                      </div>
+              
+                      <!-- Submit Button -->
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              
+                  <!-- Result Section -->
+                  <div class="mt-4" id="result"></div>
+              </div>
                       </div>
                     </div> 
   
